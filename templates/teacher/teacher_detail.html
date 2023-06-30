@@ -2,8 +2,9 @@
 
 {% block content %}
   <h2>Teacher Detail</h2>
-  <p><strong>Name:</strong> {{ teacher.name }}</p>
-  <p><strong>Phone:</strong> {{ teacher.phone }}</p>
+  <p><strong>Name:</strong> {{ teacher.username }}</p>
+  <p><strong>Phone:</strong> {{ teacher.phone_number }}</p>
+  <p><strong>Grade:</strong> {{ teacher.grade }}</p>
   <p><strong>Subject:</strong> {{ teacher.subject }}</p>
   <a href="{% url 'school_app:teacher_update' teacher.pk %}">Edit</a>
   <a href="{% url 'school_app:teacher_delete' teacher.pk %}">Delete</a>
