@@ -8,15 +8,18 @@
 
 - заходим в проект:
 - `cd school`
-- 
+
 
 - запуск с помощью docker:
-- `docker-compose up`
+- `docker-compose up -d --build`
+- 
+- после:
+- `docker-compose run web python manage.py migrate`
 
 
 
 - переходим по ссылке:
-- http://localhost:8000/
+- http://0.0.0.0:8000/
 
 
 

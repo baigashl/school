@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'school.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'school_db',
-        'USER': 'school_user',
-        'PASSWORD': 'school_userSmart1',
-        'HOST': 'db',  # Use the service name defined in docker-compose.yml
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
