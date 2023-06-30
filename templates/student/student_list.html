@@ -1,0 +1,14 @@
+{% extends 'student/../base.html' %}
+
+{% block content %}
+  <h2>Student List</h2>
+  <ul>
+    {% for student in students %}
+      <li><a href="{% url 'school_app:student_detail' student.pk %}">{{ student.full_name }}</a></li>
+    {% empty %}
+      <li>No students found.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'school_app:student_create' %}">Add Student</a>
+  <a href="{% url 'school_app:send_email' %}">Send Mail to Student</a>
+{% endblock %}

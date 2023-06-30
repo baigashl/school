@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    /* Здесь можно добавить свои стили */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>School App</h1>
+    <nav>
+      <ul>
+        <li><a href="{% url 'school_app:student_list' %}">Students</a></li>
+        <li><a href="{% url 'school_app:teacher_list' %}">Teachers</a></li>
+        <li><a href="{% url 'school_app:grade_list' %}">Grades</a></li>
+        <li><a href="{% url 'school_app:school_list' %}">Schools</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    &copy; {{ year }} School App. All rights reserved.
+  </footer>
+</body>
+</html>

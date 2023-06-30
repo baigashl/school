@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>School Detail</h2>
+  <p><strong>Name:</strong> {{ school.name }}</p>
+  <p><strong>Grades:</strong></p>
+  <ul>
+    {% for grade in school.grades.all %}
+      <li>{{ grade.name }}</li>
+    {% empty %}
+      <li>No grades in this school.</li>
+    {% endfor %}
+  </ul>
+  <p><strong>Note:</strong> {{ school.note }}</p>
+  <a href="{% url 'school_app:school_update' school.pk %}">Edit</a>
+  <a href="{% url 'school_app:school_delete' school.pk %}">Delete</a>
+{% endblock %}

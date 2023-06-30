@@ -1,0 +1,16 @@
+{% extends 'student/../base.html' %}
+
+{% block content %}
+  <h2>Student Detail</h2>
+  <p><strong>Name:</strong> {{ student.full_name }}</p>
+  <p><strong>Email:</strong> {{ student.email }}</p>
+  <p><strong>Date of Birth:</strong> {{ student.date_of_birth }}</p>
+  <p><strong>Grade:</strong> {{ student.grade }}</p>
+  <p><strong>Address:</strong> {{ student.address }}</p>
+  <p><strong>Gender:</strong> {{ student.gender }}</p>
+  {% if student.photo %}
+    <p><img src="{{ student.photo.url }}" alt="Student Photo"></p>
+  {% endif %}
+  <a href="{% url 'school_app:student_update' student.pk %}">Edit</a>
+  <a href="{% url 'school_app:student_delete' student.pk %}">Delete</a>
+{% endblock %}

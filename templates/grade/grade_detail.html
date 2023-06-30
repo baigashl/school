@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Grade Detail</h2>
+  <p><strong>Name:</strong> {{ grade.name }}</p>
+  <p><strong>Teacher:</strong> {{ grade.teacher }}</p>
+  <p><strong>Students:</strong></p>
+  <ul>
+    {% for student in grade.students.all %}
+      <li>{{ student.full_name }}</li>
+    {% empty %}
+      <li>No students in this grade.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'school_app:grade_update' grade.pk %}">Edit</a>
+  <a href="{% url 'school_app:grade_delete' grade.pk %}">Delete</a>
+{% endblock %}

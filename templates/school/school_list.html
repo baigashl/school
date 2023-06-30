@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>School List</h2>
+  <ul>
+    {% for school in schools %}
+      <li><a href="{% url 'school_app:school_detail' school.pk %}">{{ school.name }}</a></li>
+    {% empty %}
+      <li>No schools found.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'school_app:school_create' %}">Add School</a>
+{% endblock %}
